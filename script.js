@@ -1,62 +1,39 @@
-const services = [
-    { name: "Діагностика" },
-    { name: "Заміна масла" },
-    { name: "Гальмівна система" }
-];
+const services = ["Діагностика", "Масло", "Гальма"];
 
-let selectedService = null;
-let selectedSlot = null;
+let selected = null;
 
-function renderServices() {
-    const grid = document.getElementById("services-grid");
+const servicesDiv = document.getElementById("services");
 
-    services.forEach(s => {
-        const div = document.createElement("div");
-        div.className = "service-card";
-        div.innerHTML = `<h3>${s.name}</h3>`;
-        div.onclick = () => selectService(s);
-        grid.appendChild(div);
-    });
-}
+services.forEach(s => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerText = s;
+    div.onclick = () => {
+        selected = s;
+        document.getElementById("selected").innerText = s;
+    };
+    servicesDiv.appendChild(div);
+});
 
-function selectService(s) {
-    selectedService = s;
-    document.getElementById("booking").classList.remove("hidden");
-    document.getElementById("selected-service").innerText = s.name;
-    generateSlots();
-}
+const slots = ["09:00","10:00","11:00","12:00"];
 
-function generateSlots() {
-    const times = ["10:00","11:00","12:00","13:00","14:00"];
-    const grid = document.getElementById("slots-grid");
+const slotsDiv = document.getElementById("slots");
 
-    grid.innerHTML = "";
+slots.forEach(t => {
+    const div = document.createElement("div");
+    div.className = "slot";
+    div.innerText = t;
 
-    times.forEach(t => {
-        const div = document.createElement("div");
-        div.className = "slot";
-        div.innerText = t;
+    div.onclick = () => {
+        document.querySelectorAll(".slot")
+            .forEach(x => x.classList.remove("active"));
 
-        div.onclick = () => {
-            document.querySelectorAll(".slot")
-                .forEach(el => el.classList.remove("selected"));
+        div.classList.add("active");
+    };
 
-            div.classList.add("selected");
-            selectedSlot = t;
+    slotsDiv.appendChild(div);
+});
 
-            document.getElementById("confirm-booking").disabled = false;
-        };
-
-        grid.appendChild(div);
-    });
-}
-
-document.getElementById("open-booking").onclick = () => {
-    document.getElementById("booking").classList.remove("hidden");
+document.getElementById("open").onclick = () => {
+    window.scrollTo({ top: 600, behavior: "smooth" });
 };
-
-document.getElementById("confirm-booking").onclick = () => {
-    alert(`${selectedService.name} о ${selectedSlot}`);
-};
-
-renderServices();

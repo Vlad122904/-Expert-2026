@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>СТО Expert 2026</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автолікар - СТО бронювання</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="navbar">
-    <div class="container">
-        <div class="logo">EXPERT 2026</div>
-    </div>
-</div>
-
-<header class="hero">
-    <div class="container">
-        <h1>СТО Expert 2026</h1>
-        <p>Сучасне онлайн бронювання автосервісу</p>
-        <button class="btn" id="open">Забронювати</button>
-    </div>
+<header class="header">
+  <h1>🚗 Автолікар</h1>
+  <p>Онлайн бронювання автосервісу</p>
 </header>
 
-<section class="section">
-    <div class="container">
-        <div class="section-title">Послуги</div>
-        <div class="grid" id="services"></div>
-    </div>
-</section>
+<main class="container">
 
-<section class="section booking">
-    <div class="container booking-grid">
+  <div class="card">
+    <h2>Оберіть послугу</h2>
+    <select id="service">
+      <option>Діагностика</option>
+      <option>Заміна масла</option>
+      <option>Гальмівна система</option>
+      <option>Підвіска</option>
+      <option>Електрика</option>
+    </select>
 
-        <div>
-            <h3>Вибрана послуга</h3>
-            <div class="highlight" id="selected">—</div>
+    <h2>Оберіть час</h2>
+    <div id="slots"></div>
 
-            <input type="date">
-        </div>
+    <button onclick="book()">Забронювати</button>
+  </div>
 
-        <div>
-            <h3>Час</h3>
-            <div class="slots" id="slots"></div>
-        </div>
+</main>
 
-    </div>
-</section>
+<footer>
+  © Андреєнко Владислав 2026
+</footer>
 
 <script src="script.js"></script>
 </body>

@@ -1,0 +1,121 @@
+:root {
+    --navy: #0a192f;
+    --accent: #64ffda;
+    --slate: #8892b0;
+    --charcoal: #112240;
+    --white: #e6f1ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--navy);
+    color: var(--slate);
+    font-family: system-ui, sans-serif;
+}
+
+.navbar {
+    background: var(--charcoal);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
+.logo span {
+    color: white;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--slate);
+}
+
+.hero {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)),
+        url('https://picsum.photos/id/1015/1920/1080') center/cover;
+    color: white;
+}
+
+.btn-primary {
+    background: var(--accent);
+    padding: 14px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--charcoal);
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.slot {
+    padding: 10px;
+    text-align: center;
+    background: var(--navy);
+    cursor: pointer;
+}
+
+.slot.selected {
+    border: 2px solid var(--accent);
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}

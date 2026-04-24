@@ -1,32 +1,30 @@
 const slotsDiv = document.getElementById("slots");
-let selectedSlot = null;
+let selected = null;
 
-// створення слотів 9:00 - 17:00
-for(let h=9; h<=17; h++){
-    let div = document.createElement("div");
-    div.classList.add("slot");
-    div.textContent = h + ":00";
+if(slotsDiv){
+  for(let h=9; h<=17; h++){
+    let s = document.createElement("div");
+    s.className = "slot";
+    s.textContent = h + ":00";
 
-    div.onclick = () => {
-        document.querySelectorAll(".slot").forEach(s => s.classList.remove("active"));
-        div.classList.add("active");
-        selectedSlot = div.textContent;
+    s.onclick = () => {
+      document.querySelectorAll(".slot").forEach(el => el.classList.remove("active"));
+      s.classList.add("active");
+      selected = s.textContent;
     };
 
-    slotsDiv.appendChild(div);
+    slotsDiv.appendChild(s);
+  }
 }
 
 function book(){
-    const service = document.getElementById("service").value;
+  const service = document.getElementById("service").value;
 
-    if(!selectedSlot){
-        alert("Оберіть час!");
-        return;
-    }
+  if(!selected){
+    alert("Оберіть час!");
+    return;
+  }
 
-    alert(
-        "✅ Бронювання підтверджено!\n\n" +
-        "Послуга: " + service + "\n" +
-        "Час: " + selectedSlot
-    );
+  window.location.href =
+  `confirm.html?service=${service}&time=${selected}`;
 }

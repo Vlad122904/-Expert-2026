@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Підтвердження</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Підтверджено</h1>
+</header>
+
+<main class="card">
+  <h2>✅ Ваш запис успішний!</h2>
+  <p id="info"></p>
+
+  <a class="btn" href="index.html">На головну</a>
+</main>
+
+<footer>© Андреєнко Владислав 2026</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("info").innerText =
+"Послуга: " + params.get("service") + " | Час: " + params.get("time");
+</script>
+
+</body>
+</html>

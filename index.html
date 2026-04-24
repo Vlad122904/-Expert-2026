@@ -2,41 +2,31 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Автолікар - СТО бронювання</title>
+<title>Послуги</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <h1>🚗 Автолікар</h1>
-  <p>Онлайн бронювання автосервісу</p>
+<header>
+  <h1>Послуги СТО</h1>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="services.html">Послуги</a>
+    <a href="booking.html">Бронювання</a>
+  </nav>
 </header>
 
-<main class="container">
-
-  <div class="card">
-    <h2>Оберіть послугу</h2>
-    <select id="service">
-      <option>Діагностика</option>
-      <option>Заміна масла</option>
-      <option>Гальмівна система</option>
-      <option>Підвіска</option>
-      <option>Електрика</option>
-    </select>
-
-    <h2>Оберіть час</h2>
-    <div id="slots"></div>
-
-    <button onclick="book()">Забронювати</button>
-  </div>
-
+<main class="card">
+  <ul>
+    <li>🔧 Діагностика автомобіля</li>
+    <li>🛢 Заміна масла</li>
+    <li>🛑 Ремонт гальмівної системи</li>
+    <li>🚗 Підвіска</li>
+    <li>⚡ Електрика</li>
+  </ul>
 </main>
 
-<footer>
-  © Андреєнко Владислав 2026
-</footer>
+<footer>© Андреєнко Владислав 2026</footer>
 
-<script src="script.js"></script>
 </body>
 </html>

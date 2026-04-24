@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТО Expert 2026 | Бронювання послуг</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">EXPERT<span>2026</span></div>
+    <div class="nav-links">
+        <a href="#services">Послуги</a>
+        <a href="#booking">Бронювання</a>
+        <a href="#contacts">Контакти</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>СТО Expert 2026</h1>
+        <p>Професійний автосервіс з миттєвим онлайн-бронюванням</p>
+        <button id="open-booking" class="btn-primary">Забронювати послугу</button>
+    </div>
+</section>
+
+<section id="services" class="section">
+    <h2 class="section-title">Наші послуги</h2>
+    <div class="services-grid" id="services-grid"></div>
+</section>
+
+<section id="booking" class="section booking-section hidden">
+    <h2 class="section-title">Оберіть послугу та час</h2>
+
+    <div class="booking-container">
+        <div>
+            <h3>Обрана послуга:</h3>
+            <p id="selected-service" class="selected-service">—</p>
+
+            <label>Оберіть дату:</label>
+            <input type="date" id="booking-date" class="date-input" min="2026-04-25">
+        </div>
+
+        <div>
+            <h3>Доступні часові слоти:</h3>
+            <div class="slots-grid" id="slots-grid"></div>
+        </div>
+    </div>
+
+    <div class="center">
+        <button id="confirm-booking" class="btn-primary" disabled>
+            Підтвердити бронювання
+        </button>
+    </div>
+</section>
+
+<dialog id="confirmation-modal">
+    <div class="modal-content">
+        <h3>✅ Бронювання підтверджено!</h3>
+        <p id="modal-details"></p>
+        <button id="close-modal" class="btn-primary">Закрити</button>
+    </div>
+</dialog>
+
+<footer id="contacts">
+    <p><strong>СТО Expert 2026</strong> | вул. Технічна, 101, Київ | +380 44 123 45 67</p>
+    <p>Гарантія на роботи — 1 рік, на запчастини — 2 роки</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

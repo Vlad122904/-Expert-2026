@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Бронювання</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Бронювання</h1>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="services.html">Послуги</a>
+    <a href="booking.html">Бронювання</a>
+  </nav>
+</header>
+
+<main class="card">
+
+  <h2>Оберіть послугу</h2>
+  <select id="service">
+    <option>Діагностика</option>
+    <option>Заміна масла</option>
+    <option>Гальмівна система</option>
+    <option>Підвіска</option>
+    <option>Електрика</option>
+  </select>
+
+  <h2>Оберіть час</h2>
+  <div id="slots"></div>
+
+  <button onclick="book()">Продовжити</button>
+
+</main>
+
+<footer>© Андреєнко Владислав 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
